@@ -1,0 +1,36 @@
+{
+  "variantName": "search-inline",
+  "baseBlock": "search",
+  "version": "1.0.0",
+  "created": "2026-06-25T20:08:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.grainger.com/know-how",
+    "originPage": "Grainger KnowHow content hub homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "inline-search",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + query input + submit; results render below",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "inline 'search the content' boxes within a sidebar or column",
+      "query-index backed site search on a content hub"
+    ],
+    "notSuitableFor": [
+      "external form submissions to a marketing endpoint (those are forms, not search)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/know-how"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-25T20:08:00.000Z"
+  }
+}

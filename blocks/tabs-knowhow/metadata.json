@@ -1,0 +1,36 @@
+{
+  "variantName": "tabs-knowhow",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-06-25T20:08:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.grainger.com/know-how",
+    "originPage": "Grainger KnowHow content hub homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "content-tabs",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "tab label rows; each panel holds a nested card grid",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category-switchable content panels",
+      "'Most Recent' style tabbed article grids"
+    ],
+    "notSuitableFor": [
+      "single non-switchable content (use default content or a cards block directly)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/know-how"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-25T20:08:00.000Z"
+  }
+}

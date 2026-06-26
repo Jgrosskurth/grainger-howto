@@ -1,0 +1,56 @@
+.cards-horizontal > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cards-horizontal > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: var(--background-color);
+}
+
+.cards-horizontal .cards-horizontal-card-image {
+  flex: 0 0 128px;
+  width: 128px;
+  line-height: 0;
+}
+
+.cards-horizontal .cards-horizontal-card-image picture,
+.cards-horizontal .cards-horizontal-card-image img {
+  display: block;
+  width: 128px;
+  height: 85px;
+  object-fit: cover;
+}
+
+.cards-horizontal .cards-horizontal-card-body {
+  flex: 1 1 auto;
+  padding: 8px;
+}
+
+.cards-horizontal .cards-horizontal-card-body p {
+  margin: 0 0 3px;
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.cards-horizontal .cards-horizontal-card-body h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: none;
+}
+
+.cards-horizontal > ul > li:hover {
+  background-color: var(--light-color);
+}

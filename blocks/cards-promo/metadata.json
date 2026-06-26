@@ -1,0 +1,36 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-25T20:08:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.grainger.com/know-how",
+    "originPage": "Grainger KnowHow content hub homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "promo-tile",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "clickable image only (linked promo tile, no text)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "image-only clickable promo / ad tiles",
+      "sidebar promotional banners linking to another page"
+    ],
+    "notSuitableFor": [
+      "cards that require text content (use cards-knowhow or cards-horizontal)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/know-how"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-25T20:08:00.000Z"
+  }
+}

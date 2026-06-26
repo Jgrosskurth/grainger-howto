@@ -1,0 +1,89 @@
+.cards-knowhow > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* 2-up (and wider) contexts sit side by side on tablet/desktop */
+@media (width >= 900px) {
+  .cards-knowhow > ul {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+.cards-knowhow > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  padding-bottom: 25px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cards-knowhow > ul > li:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  transform: translateY(-2px);
+}
+
+/* Image with overlaid category chip */
+.cards-knowhow .cards-knowhow-card-image {
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-knowhow .cards-knowhow-card-image img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Red category chip overlaid on lower-left of the image */
+.cards-knowhow .cards-knowhow-card-category {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 3px 30px 1px 10px;
+  background-color: var(--brand-red);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+/* Card body */
+.cards-knowhow .cards-knowhow-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px 0;
+}
+
+.cards-knowhow .cards-knowhow-card-body h3 {
+  margin: 0;
+  color: #000;
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.cards-knowhow .cards-knowhow-card-body p {
+  margin: 10px 0 0;
+  color: #000;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.cards-knowhow .cards-knowhow-card-body p.cards-knowhow-card-date {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 20px;
+}

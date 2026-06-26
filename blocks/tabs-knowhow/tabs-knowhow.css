@@ -1,0 +1,97 @@
+/* Grainger KnowHow "MOST RECENT" tabbed section
+ * Tab strip: black 16px Roboto labels on white, active tab gets a grey (#eeeeee)
+ * block, with a full-width red (#d50000) rule beneath the whole tab bar.
+ * The card grid lives in the panel area below.
+ */
+
+.tabs-knowhow {
+  --tabs-knowhow-red: #d50000;
+  --tabs-knowhow-grey: #eee;
+
+  width: 100%;
+}
+
+.tabs-knowhow .tabs-knowhow-panel,
+.tabs-knowhow .tabs-knowhow-panel .cards-knowhow,
+.tabs-knowhow .tabs-knowhow-panel .cards-knowhow > ul {
+  width: 100%;
+}
+
+/* tab bar ----------------------------------------------------------------- */
+.tabs-knowhow .tabs-knowhow-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  max-width: 100%;
+  margin: 0 0 16px;
+  padding: 0;
+  border-bottom: 4px solid var(--tabs-knowhow-red);
+  font-family: var(--body-font-family);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.tabs-knowhow .tabs-knowhow-list button.tabs-knowhow-tab {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 8px 16px 4px;
+  background-color: transparent;
+  color: #000;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.tabs-knowhow .tabs-knowhow-list button.tabs-knowhow-tab p {
+  margin: 0;
+}
+
+.tabs-knowhow .tabs-knowhow-list button.tabs-knowhow-tab:hover {
+  background-color: var(--tabs-knowhow-grey);
+}
+
+/* active tab: grey block + red accent underline */
+.tabs-knowhow .tabs-knowhow-list button.tabs-knowhow-tab[aria-selected='true'] {
+  background-color: var(--tabs-knowhow-grey);
+  font-weight: 700;
+  cursor: default;
+}
+
+.tabs-knowhow .tabs-knowhow-list button.tabs-knowhow-tab:focus-visible {
+  outline: 2px solid var(--tabs-knowhow-red);
+  outline-offset: -2px;
+}
+
+/* panel ------------------------------------------------------------------- */
+.tabs-knowhow .tabs-knowhow-panel {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tabs-knowhow .tabs-knowhow-panel[aria-hidden='true'] {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .tabs-knowhow .tabs-knowhow-list {
+    overflow-x: visible;
+  }
+
+  .tabs-knowhow .tabs-knowhow-list button.tabs-knowhow-tab {
+    padding: 8px 24px 4px;
+  }
+
+  /* Most Recent panels always show 3 cards in a single row */
+  .tabs-knowhow .tabs-knowhow-panel .cards-knowhow > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

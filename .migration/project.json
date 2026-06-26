@@ -1,0 +1,11 @@
+{
+  "sites": {
+    "grainger-howto": {
+      "previewOrg": "Jgrosskurth",
+      "previewSite": "grainger-howto",
+      "contentHostUrl": "https://content.da.live/Jgrosskurth/grainger-howto/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  },
+  "type": "da"
+}

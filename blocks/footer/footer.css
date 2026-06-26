@@ -1,20 +1,159 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  font-family: var(--body-font-family);
+}
+
+footer .footer {
+  margin: 0;
+  max-width: none;
+  padding: 0;
 }
 
 footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0;
+  max-width: none;
+  padding: 0;
 }
 
-footer .footer p {
+footer .footer p { margin: 0; }
+
+footer .footer a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer a:hover { text-decoration: underline; }
+
+/* email signup bar (grey) */
+footer .footer .footer-signup {
+  background-color: var(--grey);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 30px;
+}
+
+footer .footer .footer-signup .default-content-wrapper {
   margin: 0;
 }
 
+footer .footer .footer-signup p:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+footer .footer .footer-signup-form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+footer .footer .footer-signup-form input {
+  width: 260px;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #767676;
+  border-radius: 0;
+  background-color: #fff;
+  font: inherit;
+}
+
+footer .footer .footer-signup-form button {
+  background-color: var(--dark-color);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+footer .footer .footer-signup-form button:hover {
+  background-color: #2a2a2a;
+}
+
+/* black columns area */
+footer .footer .footer-columns {
+  background-color: #000;
+  padding: 40px;
+}
+
+footer .footer .footer-columns > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .footer .footer-columns > div > div {
+  flex: 1 1 180px;
+  text-align: center;
+}
+
+footer .footer .footer-columns > div > div + div {
+  border-left: 1px solid #444;
+}
+
+footer .footer .footer-columns img {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+footer .footer .footer-columns img[alt="Grainger"] { max-height: 30px; }
+footer .footer .footer-columns img[alt="KnowHow"] { max-height: 24px; }
+
+footer .footer .footer-columns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .footer-columns li { padding: 8px 0; }
+
+/* connect column: social icons inline, signup button */
+footer .footer .footer-columns p img[alt="Facebook"],
+footer .footer .footer-columns p img[alt="LinkedIn"],
+footer .footer .footer-columns p img[alt="Twitter"],
+footer .footer .footer-columns p img[alt="YouTube"] {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 0;
+}
+
+footer .footer .footer-columns a[href*="email-signup"] {
+  display: inline-block;
+  background-color: var(--brand-red);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+footer .footer .footer-columns a[href*="email-signup"]:hover {
+  background-color: #a50d26;
+  text-decoration: none;
+}
+
+/* copyright bar */
+footer .footer .footer-copyright {
+  background-color: #000;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #333;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer .footer-columns {
+    flex-wrap: nowrap;
   }
 }

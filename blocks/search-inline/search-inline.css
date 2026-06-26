@@ -1,0 +1,122 @@
+/* inline search widget — Grainger KnowHow "What KnowHow Are You Looking For?" */
+.search-inline {
+  box-sizing: border-box;
+  max-width: 440px;
+  background-color: var(--light-color); /* #f5f5f5, source #eee */
+  padding: 15px;
+}
+
+/* bold dark title */
+.search-inline .search-inline-title {
+  margin: 0 0 5px;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 14px;
+  text-transform: none;
+}
+
+/* search box: bordered input next to black submit/icon button on one row */
+.search-inline .search-inline-box {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+}
+
+.search-inline .search-inline-box .search-inline-input {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 30px;
+  margin: 0;
+  padding: 1px 6px;
+  border: 1px solid rgb(41 51 59);
+  border-radius: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+.search-inline .search-inline-box .search-inline-input:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+
+/* search action — black button with small radius, white icon (sits to the right) */
+.search-inline .search-inline-box .icon.icon-search {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 44px;
+  height: 30px;
+  padding: 0 20px;
+  border-radius: 3px;
+  background-color: var(--dark-color);
+  cursor: pointer;
+}
+
+.search-inline .search-inline-box .icon.icon-search img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1); /* render the search icon white */
+}
+
+/* search results */
+.search-inline ul.search-inline-results {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-inline ul.search-inline-results:empty {
+  display: none;
+}
+
+.search-inline ul.search-inline-results > li {
+  padding: 8px 0;
+  border-bottom: 1px solid #dadada;
+}
+
+.search-inline ul.search-inline-results > li > a {
+  display: block;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.search-inline ul.search-inline-results > li > a:hover {
+  text-decoration: underline;
+}
+
+.search-inline ul.search-inline-results .search-inline-result-title {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+}
+
+.search-inline ul.search-inline-results > li .search-inline-result-title a {
+  color: var(--link-color);
+}
+
+.search-inline ul.search-inline-results > li p {
+  margin: 2px 0 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+}
+
+.search-inline ul.search-inline-results.no-results {
+  display: block;
+}
+
+.search-inline ul.search-inline-results.no-results > li {
+  border: none;
+  font-size: var(--body-font-size-s);
+}

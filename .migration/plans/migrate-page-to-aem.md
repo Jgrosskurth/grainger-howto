@@ -1,0 +1,1 @@
+I'd like to gather a few details before building the migration plan.I have the scope, but I still need the actual page URL to migrate.What is the full URL of the page you'd like to migrate? Please paste it here (for example, `https://www.example.com/some-page`), and I'll build the migration plan around it.

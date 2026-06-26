@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-knowhow",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-25T20:08:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.grainger.com/know-how",
+    "originPage": "Grainger KnowHow content hub homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "article-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + category eyebrow + headline + description + date + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "vertical article/knowHow card grids",
+      "Editor's Picks featured card",
+      "Popular and Video card grids",
+      "card grids nested inside tab panels"
+    ],
+    "notSuitableFor": [
+      "horizontal side-thumbnail card lists (use cards-horizontal)",
+      "image-only promo tiles (use cards-promo)",
+      "image-overlay teaser grids (use cards-teaser)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/know-how"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-25T20:08:00.000Z"
+  }
+}

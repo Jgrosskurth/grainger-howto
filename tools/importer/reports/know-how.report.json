@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://www.grainger.com/know-how",
+  "path": "know-how",
+  "timestamp": "2026-06-25T20:27:38.789Z",
+  "title": "Grainger KnowHow",
+  "template": "know-how-home",
+  "blocks": [
+    "cards-teaser",
+    "cards-teaser",
+    "cards-knowhow",
+    "cards-knowhow",
+    "cards-knowhow",
+    "cards-horizontal",
+    "search-inline",
+    "cards-promo",
+    "tabs-knowhow"
+  ]
+}

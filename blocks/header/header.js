@@ -137,6 +137,19 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // add a search icon button to the tools area, before the SHOP NOW CTA
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const search = document.createElement('button');
+    search.type = 'button';
+    search.className = 'nav-search';
+    search.setAttribute('aria-label', 'Search');
+    search.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.5 3a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zM16 16l5 5"/>
+      </svg>`;
+    navTools.prepend(search);
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {

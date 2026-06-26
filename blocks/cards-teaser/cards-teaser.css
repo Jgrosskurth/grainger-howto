@@ -1,0 +1,162 @@
+/*
+ * cards-teaser — image-tile teasers with text overlaid on the lower portion.
+ * Recreates the Grainger KnowHow featured grid: a large teaser on the left and,
+ * on the right, one wide teaser above two small teasers. The grid is authored as
+ * two sibling block instances inside one section (block 1 = the big teaser with
+ * 1 item, block 2 = the group with 3 items).
+ */
+
+/* ---- Per-block list: each li is an image tile with an overlaid caption ---- */
+.cards-teaser > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.cards-teaser > ul > li {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark-color);
+
+  /* Mobile: every tile is a 16:9 banner so the overlay reads cleanly. */
+  aspect-ratio: 16 / 9;
+}
+
+.cards-teaser .cards-teaser-card-image {
+  line-height: 0;
+  height: 100%;
+}
+
+.cards-teaser .cards-teaser-card-image picture {
+  display: block;
+  height: 100%;
+}
+
+.cards-teaser > ul > li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Caption overlay: flat dark scrim anchored to the lower-left of the tile. */
+.cards-teaser .cards-teaser-card-body {
+  position: absolute;
+  inset: auto 0 0;
+  margin: 0;
+  padding: 0 10px 10px 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #f5f5f5;
+  background-color: rgb(0 0 0 / 30%);
+}
+
+/* Red category eyebrow chip. */
+.cards-teaser .cards-teaser-card-body p {
+  margin: 0;
+  padding: 4px 16px 4px 8px;
+  background-color: #c8102e;
+  color: #f5f5f5;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+/* White headline. */
+.cards-teaser .cards-teaser-card-body h3 {
+  margin: 5px 0 0;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 23.1px;
+}
+
+.cards-teaser .cards-teaser-card-body h3 a,
+.cards-teaser .cards-teaser-card-body h3 a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards-teaser .cards-teaser-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Desktop: combine the two block instances into the mixed-size grid ---- */
+@media (width >= 900px) {
+  /*
+   * The section holding the two teaser blocks becomes a 2-column grid: any
+   * default content (the intro paragraph) spans both columns on the first row,
+   * then the two teaser-wrapper blocks sit side by side on the second row.
+   */
+  .cards-teaser-container.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    align-items: stretch;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 0 32px;
+    box-sizing: border-box;
+  }
+
+  /* The section's own padding now applies, so reset the inner wrappers'. */
+  .cards-teaser-container.section > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cards-teaser-container.section > .default-content-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  /* Both wrappers must stretch to equal height so the columns line up. */
+  .cards-teaser-container > .cards-teaser-wrapper {
+    margin: 0;
+    height: 100%;
+  }
+
+  .cards-teaser-container .cards-teaser,
+  .cards-teaser-container .cards-teaser > ul {
+    height: 100%;
+  }
+
+  /*
+   * Distinguish the two block instances by item count: the big teaser block has
+   * a single item (li:only-child); the group block has multiple items. This is
+   * robust regardless of source order.
+   */
+
+  /* Left block: single large teaser fills the whole left column. */
+  .cards-teaser:has(li:only-child) > ul {
+    gap: 0;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .cards-teaser:has(li:only-child) > ul > li {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  /* Right block: one wide teaser on top, two small teasers below (50/50). */
+  .cards-teaser:has(li:nth-child(2)) > ul {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.28fr 1fr;
+    gap: 16px;
+  }
+
+  .cards-teaser:has(li:nth-child(2)) > ul > li {
+    aspect-ratio: auto;
+  }
+
+  /* First item in the group block spans both columns (the wide teaser). */
+  .cards-teaser:has(li:nth-child(2)) > ul > li:first-child {
+    grid-column: 1 / -1;
+  }
+}

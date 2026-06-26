@@ -1,0 +1,44 @@
+/* cards-promo: single full-width, borderless, image-only clickable promo tile */
+
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.cards-promo > ul > li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.cards-promo .cards-promo-card-image {
+  display: block;
+  line-height: 0;
+}
+
+.cards-promo .cards-promo-card-image picture {
+  display: block;
+}
+
+.cards-promo .cards-promo-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* subtle hover: slight fade + scale, source has no chrome */
+.cards-promo > ul > li a:hover img,
+.cards-promo .cards-promo-card-image:hover img {
+  opacity: 0.92;
+  transform: scale(1.01);
+}

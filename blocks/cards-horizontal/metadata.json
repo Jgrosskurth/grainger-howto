@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-horizontal",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-25T20:08:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.grainger.com/know-how",
+    "originPage": "Grainger KnowHow content hub homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "article-list",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "side thumbnail + category eyebrow + headline + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "vertical stacks of horizontal cards with a side thumbnail",
+      "compact article lists in a narrow column"
+    ],
+    "notSuitableFor": [
+      "image-top vertical card grids (use cards-knowhow)",
+      "image-only promo tiles (use cards-promo)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/know-how"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-25T20:08:00.000Z"
+  }
+}
