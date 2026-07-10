@@ -384,20 +384,40 @@ main .section.highlight {
   }
 }
 
-/* Popular KnowHow + Video: 2/3 + 1/3 layout */
+/* Popular KnowHow + Video: three equal columns in a single row
+ * (Popular holds two cards spanning cols 1-2, Video one card in col 3). The
+ * inner grid gap matches the section gap so all three cards are equal width. */
 @media (width >= 900px) {
   main > .section.cards-knowhow-container:not(.cards-horizontal-container, .tabs-knowhow-container) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      'popular-title video-title'
-      'popular-cards video-card';
+      'popular-title popular-title video-title'
+      'popular-cards popular-cards video-card';
     align-items: start;
     gap: 0 32px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 32px;
+  }
+
+  /* Drop the per-wrapper 32px side padding so cards fill the grid tracks and
+   * all three end up the same width. */
+  main > .section.cards-knowhow-container:not(.cards-horizontal-container, .tabs-knowhow-container) > .cards-knowhow-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Popular's two cards align to the same column tracks/gap as the section. */
+  main > .section.cards-knowhow-container:not(.cards-horizontal-container, .tabs-knowhow-container) > .cards-knowhow-wrapper:nth-child(2) .cards-knowhow > ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* Stretch cards so the single-row cards share equal heights. */
+  main > .section.cards-knowhow-container:not(.cards-horizontal-container, .tabs-knowhow-container) > .cards-knowhow-wrapper .cards-knowhow > ul > li {
+    height: 100%;
   }
 
   /* title wrappers full-width within their grid cell */

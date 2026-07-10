@@ -103,9 +103,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-/* brand: Grainger + KnowHow logos */
+/* brand: Grainger + KnowHow logos side by side */
 header .nav-brand {
   grid-area: brand;
+  display: flex;
+  align-items: center;
+}
+
+header nav .nav-brand .default-content-wrapper {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -114,6 +119,7 @@ header .nav-brand {
 header nav .nav-brand p {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 header nav .nav-brand img {
@@ -201,14 +207,19 @@ header nav .nav-sections ul > li a:any-link:hover {
 @media (width >= 900px) {
   header nav {
     grid-template:
-      'brand sections tools' auto / auto 1fr auto;
-    gap: 0 24px;
+      'brand tools' auto
+      'sections sections' auto / 1fr auto;
+    gap: 12px 24px;
     align-items: center;
   }
 
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
+  }
+
+  header nav .nav-brand {
+    justify-self: start;
   }
 
   header nav .nav-sections {
@@ -219,7 +230,7 @@ header nav .nav-sections ul > li a:any-link:hover {
 
   header nav .nav-sections ul {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 28px;
   }
 
