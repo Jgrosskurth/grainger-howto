@@ -17,6 +17,17 @@
   width: 100%;
 }
 
+/* section title ----------------------------------------------------------- */
+.tabs-knowhow .tabs-knowhow-title {
+  margin: 0 0 8px;
+  color: #000;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 /* tab bar ----------------------------------------------------------------- */
 .tabs-knowhow .tabs-knowhow-list {
   display: flex;

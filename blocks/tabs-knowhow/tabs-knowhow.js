@@ -10,13 +10,18 @@ async function decorateNestedBlock(panel) {
   const table = panel.querySelector('table');
   if (!table) return;
 
-  const blockName = toClassName(
-    (table.querySelector('thead th, thead td')?.textContent || '').trim(),
-  ) || 'cards-knowhow';
+  // The block-name header may live in <thead> or as the first <tbody> row
+  // (a single cell spanning the row, e.g. "Cards Knowhow"). Detect it either way.
+  const headerCell = table.querySelector('thead th, thead td')
+    || table.querySelector('tbody tr:first-child th');
+  const blockName = toClassName((headerCell?.textContent || '').trim()) || 'cards-knowhow';
+  const headerRow = headerCell?.closest('tr');
 
   const blockEl = document.createElement('div');
   blockEl.classList.add(blockName);
   table.querySelectorAll('tbody tr').forEach((tr) => {
+    // Skip the block-name header row so it doesn't render as a stray card.
+    if (tr === headerRow) return;
     const rowEl = document.createElement('div');
     [...tr.children].forEach((td) => {
       const cellEl = document.createElement('div');
@@ -35,6 +40,11 @@ async function decorateNestedBlock(panel) {
 }
 
 export default async function decorate(block) {
+  // section title shown above the tab strip
+  const title = document.createElement('h2');
+  title.className = 'tabs-knowhow-title';
+  title.textContent = 'MOST RECENT';
+
   // build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-knowhow-list';
@@ -79,6 +89,7 @@ export default async function decorate(block) {
   });
 
   block.prepend(tablist);
+  block.prepend(title);
 
   // Decorate the nested cards block inside each panel (left as a raw table by the importer).
   await Promise.all(
