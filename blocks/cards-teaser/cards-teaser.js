@@ -12,8 +12,15 @@ export default function decorate(block) {
     });
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+  // The first teaser is the largest above-the-fold image (LCP candidate):
+  // load it eagerly with responsive breakpoints; lazy-load the rest.
+  ul.querySelectorAll('picture > img').forEach((img, i) => {
+    const eager = i === 0;
+    const breakpoints = eager
+      ? [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }]
+      : [{ width: '750' }];
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, eager, breakpoints);
+    if (eager) optimizedPic.querySelector('img')?.setAttribute('fetchpriority', 'high');
     img.closest('picture').replaceWith(optimizedPic);
   });
   block.textContent = '';
