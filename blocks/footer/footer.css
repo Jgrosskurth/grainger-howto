@@ -33,7 +33,7 @@ footer .footer .footer-signup {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: clamp(40px, 12vw, 180px);
   padding: 20px 30px;
 }
 
@@ -50,7 +50,7 @@ footer .footer .footer-signup p:first-child {
 footer .footer .footer-signup-form {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(40px, 12vw, 180px);
 }
 
 footer .footer .footer-signup-form input {
